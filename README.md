@@ -32,7 +32,7 @@ Pour pouvoir faire tourner l'application de votre côté, il est nécessaire de 
      votre mail (pourra être utilisé pour communiquer des informations sur les API)
      vos utilisations prévues (nom de projet ? objectifs ?)
     ```
-- Créer un fichier `/lib/private.env`
+- Créer un fichier `private.env` à la racine du projet, au même niveau que `public.env`
 - Ajouter la clé d'API dans le fichier en suivant cette syntaxe : 
     ```dotenv
     API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
