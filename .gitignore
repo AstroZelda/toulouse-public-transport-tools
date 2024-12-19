@@ -44,5 +44,5 @@ app.*.map.json
 /android/app/release
 
 # Local-only dotenv files
-private.env
+.env.local
 assets/config/private.env

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:toulouse_public_transport_tools/models/dashboard.dart';
-import 'package:toulouse_public_transport_tools/models/stop_favs.dart';
-import 'package:toulouse_public_transport_tools/models/stop_list.dart';
+import 'package:toulouse_public_transport_tools/widgets/dashboard.dart';
+import 'package:toulouse_public_transport_tools/widgets/stop_favs.dart';
+import 'package:toulouse_public_transport_tools/widgets/stop_list.dart';
 
 void main() async {
   await dotenv.load(fileName: "private.env");
+  final privateEnv = Map<String, String>.from(dotenv.env);
+
   await dotenv.load(fileName: "public.env");
+  dotenv.env.addAll(privateEnv);
+
   runApp(const MyApp());
 }
 
@@ -64,9 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    const Dashboard(),
-    const StopList(),
-    const StopFavs(),
+    Dashboard(),
+    StopList(),
+    StopFavs(),
   ];
 
   @override
